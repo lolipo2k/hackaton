@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Taurus Normal';
+	src: url('../fonts/taurus_normal.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/taurus_normal.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/taurus_normal.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/taurus_normal.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/taurus_normal.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/taurus_normal.svg#taurus_normal') format('svg'); /* Chrome < 4, Legacy iOS */
+}

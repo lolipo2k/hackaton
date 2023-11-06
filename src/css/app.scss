@@ -1,0 +1,156 @@
+@import url('./font.scss');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+@mixin background {
+    background: #F6F6F6;
+    border-radius: 6px;
+}
+
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    background-color: #eee;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h5 {
+    margin: 0 0 20px 0;
+    font-family: 'Taurus Normal';
+    font-weight: 700;
+    color: #141313;
+}
+
+.data-list {
+    margin-bottom: 30px;
+
+    &--column {
+        margin-bottom: 30px;
+
+        >ul {
+            display: flex;
+            gap: 30px;
+            min-height: 50px;
+            padding: 10px 0 10px 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            @include background;
+        }
+    }
+}
+
+.data-item {
+    background: #50774F;
+    border-radius: 6px;
+    color: #F6F6F6;
+    padding: 2px 5px;
+    cursor: move;
+    line-height: 130%;
+
+    img {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 4px;
+    }
+}
+
+.data-content {
+    display: flex;
+
+    &__rows {
+        margin-right: 30px;
+        width: 150px;
+
+        >ul {
+            gap: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+            @include background;
+        }
+    }
+}
+
+.my-sticky-column-table {
+    width: calc(100% - 360px);
+    background: #F6F6F6;
+    border: 6px;
+
+    thead th {
+        background: rgba(109, 79, 119, 0.9);
+        color: #F6F6F6;
+    }
+
+    thead tr:first-child th:first-child {
+        background-color: #fff;
+        color: #141313;
+        opacity: 1;
+    }
+
+    td:first-child {
+        background-color: #f5f5dc;
+    }
+
+    thead tr:first-child th:first-child,
+    td:first-child {
+        position: sticky;
+        -webkit-position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.chart-display {
+    margin-top: 50px;
+
+    h1 {
+        display: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+    z-index: 10;
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+    border: 10px solid rgba(80, 119, 79, 0.7);
+    border-radius: 50%;
+    border-top-color: rgba(109, 79, 119, 0.7);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: 5s spin infinite linear;
+}
